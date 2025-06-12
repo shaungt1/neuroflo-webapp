@@ -69,6 +69,159 @@ const CAPABILITIES = [
   }
 ];
 
+// Floating neural particle component
+const FloatingParticle = ({ delay, duration, size, x, y, color }: { 
+  delay: number; 
+  duration: number; 
+  size: number; 
+  x: number; 
+  y: number;
+  color: string;
+}) => (
+  <div
+    className="absolute rounded-full blur-[0.5px]"
+    style={{
+      width: size,
+      height: size,
+      left: `${x}%`,
+      top: `${y}%`,
+      background: color,
+      animation: `float ${duration}s ease-in-out infinite`,
+      animationDelay: `${delay}s`,
+      opacity: 0,
+    }}
+  />
+);
+
+// Animated atom visualization component
+const AnimatedAtom = () => {
+  // Random floating particles configuration
+  const floatingParticles = [
+    { delay: 0, duration: 4, size: 3, x: 20, y: 30, color: 'rgba(59, 130, 246, 0.4)' },    // blue
+    { delay: 1.5, duration: 5, size: 2, x: 75, y: 60, color: 'rgba(6, 182, 212, 0.4)' },   // cyan
+    { delay: 3, duration: 4.5, size: 2.5, x: 40, y: 80, color: 'rgba(59, 130, 246, 0.3)' }, // blue
+  ];
+
+  return (
+    <div className="relative order-1 md:order-2 aspect-square max-w-md mx-auto">
+      {/* Background glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-full filter blur-[50px]"></div>
+      
+      {/* Floating neural particles */}
+      {floatingParticles.map((particle, index) => (
+        <FloatingParticle key={`float-${index}`} {...particle} />
+      ))}
+      
+      {/* Electron shells container */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        {/* Nucleus */}
+        <div className="absolute w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 animate-pulse">
+          <div className="absolute inset-0 rounded-full bg-blue-500/30 blur-md"></div>
+          <div className="absolute inset-2 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 animate-[spin_8s_linear_infinite]"></div>
+        </div>
+
+        {/* Inner electron shell */}
+        <div className="absolute w-48 h-48 animate-[spin_12s_linear_infinite]">
+          {[...Array(3)].map((_, i) => (
+            <div
+              key={`inner-${i}`}
+              className="absolute w-3 h-3 rounded-full bg-blue-400/80 blur-[0.5px]"
+              style={{
+                left: `${50 + 40 * Math.cos((i * 2 * Math.PI) / 3)}%`,
+                top: `${50 + 40 * Math.sin((i * 2 * Math.PI) / 3)}%`,
+                animation: `orbit-1 ${8 + i}s linear infinite`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Middle electron shell */}
+        <div className="absolute w-64 h-64 animate-[spin_16s_linear_infinite_reverse]">
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={`middle-${i}`}
+              className="absolute w-2 h-2 rounded-full bg-cyan-400/80 blur-[0.5px]"
+              style={{
+                left: `${50 + 45 * Math.cos((i * 2 * Math.PI) / 5)}%`,
+                top: `${50 + 45 * Math.sin((i * 2 * Math.PI) / 5)}%`,
+                animation: `orbit-2 ${12 + i * 0.5}s linear infinite`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Outer electron shell */}
+        <div className="absolute w-80 h-80 animate-[spin_20s_linear_infinite]">
+          {[...Array(7)].map((_, i) => (
+            <div
+              key={`outer-${i}`}
+              className="absolute w-2.5 h-2.5 rounded-full bg-blue-500/60 blur-[0.5px]"
+              style={{
+                left: `${50 + 48 * Math.cos((i * 2 * Math.PI) / 7)}%`,
+                top: `${50 + 48 * Math.sin((i * 2 * Math.PI) / 7)}%`,
+                animation: `orbit-3 ${16 + i * 0.3}s linear infinite`,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Connection lines */}
+        <div className="absolute inset-0">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={`line-${i}`}
+              className="absolute w-[1px] h-1/2 bg-gradient-to-t from-blue-500/20 to-transparent origin-bottom"
+              style={{
+                left: '50%',
+                top: '50%',
+                transform: `rotate(${(i * 45)}deg)`,
+                animation: `glow ${3 + i * 0.2}s ease-in-out infinite`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { 
+            opacity: 0;
+            transform: translate(0, 0) scale(1);
+          }
+          25% { 
+            opacity: 0.8;
+            transform: translate(10px, -10px) scale(1.1);
+          }
+          50% { 
+            opacity: 0.4;
+            transform: translate(-5px, 15px) scale(0.9);
+          }
+          75% { 
+            opacity: 0.6;
+            transform: translate(-15px, -5px) scale(1.05);
+          }
+        }
+        @keyframes orbit-1 {
+          from { transform: rotate(0deg) translateX(24px) rotate(0deg); }
+          to { transform: rotate(360deg) translateX(24px) rotate(-360deg); }
+        }
+        @keyframes orbit-2 {
+          from { transform: rotate(0deg) translateX(32px) rotate(0deg); }
+          to { transform: rotate(360deg) translateX(32px) rotate(-360deg); }
+        }
+        @keyframes orbit-3 {
+          from { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+          to { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+        }
+        @keyframes glow {
+          0%, 100% { opacity: 0.2; }
+          50% { opacity: 0.5; }
+        }
+      `}</style>
+    </div>
+  );
+};
+
 export function CapabilitiesSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -136,15 +289,7 @@ export function CapabilitiesSection() {
                     </ul>
                   </GlassmorphismCard>
                   
-                  <div className="relative order-1 md:order-2 aspect-square max-w-md mx-auto">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-full filter blur-[50px]"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-3/4 h-3/4 rounded-full border-4 border-blue-500/30 animate-[spin_10s_linear_infinite] flex items-center justify-center">
-                        <div className="w-1/2 h-1/2 rounded-full border-4 border-cyan-500/30 animate-[spin_5s_linear_infinite_reverse]"></div>
-                      </div>
-                      <div className="absolute w-20 h-20 rounded-full bg-blue-600/30 backdrop-blur-md"></div>
-                    </div>
-                  </div>
+                  <AnimatedAtom />
                 </div>
               </motion.div>
             </TabsContent>

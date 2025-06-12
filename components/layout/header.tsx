@@ -7,6 +7,8 @@ import { Menu, X, Braces } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const NAV_ITEMS = [
   { name: "Home", href: "/" },
@@ -18,9 +20,12 @@ const NAV_ITEMS = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -28,6 +33,17 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <header className="fixed top-0 w-full z-40 h-16 bg-background/80 backdrop-blur-lg border-b border-border/50">
+        <div className="container mx-auto px-4 h-full flex items-center justify-between">
+          <div className="w-8 h-8" /> {/* Placeholder for logo */}
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header 
@@ -41,13 +57,17 @@ export default function Header() {
       <div className="container mx-auto px-4 flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="relative w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 shadow-lg">
-              <Braces className="w-4 h-4 text-white" />
-              <div className="absolute inset-0 rounded-full blur-sm bg-blue-500/50 -z-10"></div>
+            <div className="relative w-50 h-10  flex items-center justify-center">
+              <Image
+                src={resolvedTheme === 'dark' ? '/logo/neuroflow-xl.png' : '/logo/neroflow-logo-dark-lg.png'}
+                alt="NeuroFlo Logo"
+                width={32}
+                height={32}
+                className="w-full h-full object-contain"
+                priority
+              />
             </div>
-            <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-600 hidden sm:inline-block">
-              NeuroFlo
-            </span>
+        
           </Link>
         </div>
         

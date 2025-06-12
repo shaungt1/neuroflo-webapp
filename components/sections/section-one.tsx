@@ -4,9 +4,30 @@ import Link from 'next/link';
 import SineWave from '@/components/fx/SineWave';
 import { Button } from '@/components/ui/button';
 import { motion } from '@/lib/motion';
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Braces } from 'lucide-react';
 
 const SectionOne: React.FC = () => {
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    // Prevent hydration mismatch
+    if (!mounted) {
+        return (
+            <section className='h-screen w-full overflow-hidden bg-background text-foreground relative'>
+                <div className="flex h-full w-full items-center justify-center">
+                    <div className="w-16 h-16" /> {/* Placeholder for logo */}
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section className='h-screen w-full overflow-hidden bg-background text-foreground relative'>
             {/* Multi-layered Distorted Blue Light */}
@@ -38,13 +59,17 @@ const SectionOne: React.FC = () => {
                     transition={{ duration: 1 }}
                     className='mb-8 sm:mb-10 md:mb-12 relative z-30'>
                     <div className="flex items-center space-x-4">
-                        <div className="relative w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 shadow-lg">
-                            <Braces className="w-8 h-8 text-white" />
-                            <div className="absolute inset-0 rounded-full blur-sm bg-blue-500/50 -z-10"></div>
+                        <div className="relative w-full h-full flex items-center justify-center">
+                            <Image
+                                src={resolvedTheme === 'dark' ? '/logo/neuroflow-xl.png' : '/logo/neroflow-logo-dark-lg.png'}
+                                alt="NeuroFlo Logo"
+                                width={64}
+                                height={64}
+                                className="w-full h-full object-contain"
+                                priority
+                            />
                         </div>
-                        <span className="font-bold text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-600">
-                            NeuroFlo
-                        </span>
+                    
                     </div>
                 </motion.div>
 
@@ -62,11 +87,11 @@ const SectionOne: React.FC = () => {
 
                     {/* Content with enhanced readability */}
                     <h3 className='mb-4 bg-gradient-to-r from-blue-400 via-blue-600 to-cyan-400 bg-clip-text text-3xl font-bold text-transparent drop-shadow-lg'>
-                        AI That Obeys Rules. Not Limits.
+                    Real-Time AI For Real-World Systems.
                     </h3>
 
                     <p className='mb-6 text-base text-white/90 dark:text-white/80 font-medium drop-shadow-md'>
-                        NeuroFlo connects voice, video & automation — instantly, securely.
+                        NeuroFlo connects voice, video & automation — instantly, securely. Come discover how NeuroFlo’s agent-based AI platform transforms video, voice, text, sensor, and edge data into structured, auditable intelligence—built for the speed, precision, and compliance demands of critical infrastructure.
                     </p>
 
                     <div className='flex flex-wrap justify-center gap-6'>
@@ -77,7 +102,7 @@ const SectionOne: React.FC = () => {
                         </Link>
                         <Link href='/contact'>
                             <Button variant='secondary' className="bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm shadow-lg">
-                                Get Started
+                                Request a Demo
                             </Button>
                         </Link>
                     </div>

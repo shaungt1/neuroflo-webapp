@@ -54,6 +54,7 @@ export default function InvestorsPage() {
                   <DownloadButton />
                 </div>
               </div>
+              {/* Floating orb animations */}
               <div className="relative aspect-square max-w-md mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-600/20 rounded-full filter blur-[50px]"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
