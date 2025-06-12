@@ -1,6 +1,10 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { Braces } from "lucide-react";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const RESOURCES = [
   { name: "Home", href: "/" },
@@ -16,17 +20,28 @@ const LEGAL = [
 ];
 
 export default function Footer() {
+  const { resolvedTheme } = useTheme();
+  
   return (
     <footer className="border-t border-border/40 bg-background/50 backdrop-blur-sm">
       <div className="container px-4 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
             <div className="flex items-center space-x-2">
-              <div className="relative w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 shadow-lg">
-                <Braces className="w-4 h-4 text-white" />
-                <div className="absolute inset-0 rounded-full blur-sm bg-blue-500/50 -z-10"></div>
+              <div className="relative w-50 h-18 flex items-center justify-center">
+                <Link href="/" className="flex items-center space-x-2">
+                  <div className="relative w-50 h-10 flex items-center justify-center">
+                    <Image
+                      src={resolvedTheme === 'dark' ? '/logo/neuroflow-xl.png' : '/logo/neroflow-logo-dark-lg.png'}
+                      alt="NeuroFlo Logo"
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-contain"
+                      priority
+                    />
+                  </div>
+                </Link>
               </div>
-              <span className="font-bold text-xl">NeuroFlo</span>
             </div>
             
             <p className="max-w-xs mt-4 text-sm text-muted-foreground">
