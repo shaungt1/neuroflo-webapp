@@ -18,7 +18,7 @@ export default function PrivacyPage() {
           <GlassmorphismCard intensity="low" className="prose dark:prose-invert max-w-none">
             <h2>1. Introduction</h2>
             <p>
-              Welcome to NeuroFlo LLC's Privacy Policy. This Privacy Policy describes how we collect, use, process, and disclose your information, including personal information, in conjunction with your access to and use of our agentic AI platform and services.
+              Welcome WORLD to NeuroFlo LLC's Privacy Policy. This Privacy Policy describes how we collect, use, process, and disclose your information, including personal information, in conjunction with your access to and use of our agentic AI platform and services.
             </p>
             <p>
               When you use our services, you trust us with your information. We are committed to keeping that trust. That starts with helping you understand our privacy practices.
