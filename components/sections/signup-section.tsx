@@ -52,7 +52,7 @@ export function SignupSection() {
           >
             <h2 className="text-3xl font-bold mb-4">Join Our Early Testing Program</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We're onboarding select partners in law enforcement, healthcare, defense, and government agencies. Register your interest to be among the first to experience NeuroFlo.
+               We’re onboarding hospitals, surgical centers, and academic programs to pilot Op-Notes → Claims, validation, and insights on a HIPAA and SOC 2 foundation. Register your interest to join the healthcare cohort.
             </p>
           </motion.div>
           

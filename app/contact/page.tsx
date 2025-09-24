@@ -51,7 +51,7 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Get in touch with our team to learn more about NeuroFlo's custom AI solutions.
+              Talk with our team to see how NeuroFlo turns operative notes into clean claims, live insights, and compliant automation for your organization.
             </p>
           </div>
           

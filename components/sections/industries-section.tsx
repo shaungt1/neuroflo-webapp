@@ -4,36 +4,57 @@ import { useEffect, useRef } from "react";
 import { useInView } from "@/lib/use-in-view";
 import { GlassmorphismCard } from "@/components/ui/glassmorphism-card";
 import { motion } from "@/lib/motion";
-
 const INDUSTRIES = [
   {
-    name: "Government",
-    description: "Real-time traffic management, border surveillance, and infrastructure monitoring with AI-powered video analysis.",
+    name: "Hospitals & Surgical Centers",
+    description:
+      "Turn operative notes into clean claims and research-ready insights. Coding with evidence, payer validation, Oracle Cerner integration, and KPI dashboards.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M2 20h20"></path><path d="M5 20V8.2c0-.4.3-.8.7-.9l.2-.1c.4 0 .8.2 1 .5l1.8 2.6c.3.4.9.4 1.2 0l1.8-2.6c.3-.4.5-.6 1-.5.1 0 .2 0 .3.1.4.1.7.5.7.9V20"></path><path d="M13 14h6a2 2 0 0 1 2 2v4"></path><path d="M8 17H5"></path></svg>
-    )
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
+        <path d="M3 22h18"></path><path d="M6 22V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path><path d="M9 10h6"></path><path d="M12 7v6"></path>
+      </svg>
+    ),
+  },
+  // {
+  //   name: "Ambulatory Surgery Centers (ASCs)",
+  //   description:
+  //     "High-throughput documentation and coder review. CPT, ICD-10, and HCPCS suggestions with sentence-level citations and denial-prevention checks.",
+  //   icon: (
+  //     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
+  //       <rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M2 20h20"></path><path d="M8 8h8"></path><path d="M8 12h6"></path>
+  //     </svg>
+  //   ),
+  // },
+  {
+    name: "Academic Medicine & Research",
+    description:
+      "Measurement-based KPIs from the same notes. Cohort filters, secure exports, and audit trails that support IRB processes without duplicate charting.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
+        <path d="M22 12l-10 7L2 12l10-7 10 7z"></path><path d="M6 15v4"></path><path d="M18 15v4"></path>
+      </svg>
+    ),
   },
   {
-    name: "Military",
-    description: "Tactical reconnaissance, perimeter surveillance, and battlefield telemedicine via advanced AI video processing.",
+    name: "Revenue Cycle & Coding Teams",
+    description:
+      "One validation panel for evidence, modifiers, bundling, and payer rules. Lower denials, clearer audits, and no-code automations across pre- and post-bill.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
-    )
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
+        <rect x="3" y="3" width="18" height="14" rx="2"></rect><path d="M7 21h10"></path><path d="M9 17v4"></path><path d="M15 17v4"></path>
+      </svg>
+    ),
   },
   {
-    name: "Law Enforcement",
-    description: "Active shooter response coordination, license plate monitoring, and evidence validation with real-time AI.",
+    name: "Government Healthcare (VA, DoD, Public Health)",
+    description:
+      "Healthcare-focused deployments with HIPAA and SOC 2 controls, role-based access, and integration pathways to government EHRs and revenue systems.",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"></path></svg>
-    )
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500">
+        <path d="M2 20h20"></path><path d="M5 20V8.2c0-.4.3-.8.7-.9l.2-.1c.4 0 .8.2 1 .5l1.8 2.6c.3.4.9.4 1.2 0l1.8-2.6c.3-.4.5-.6 1-.5.1 0 .2 0 .3.1.4.1.7.5.7.9V20"></path><path d="M13 14h6a2 2 0 0 1 2 2v4"></path><path d="M8 17H5"></path>
+      </svg>
+    ),
   },
-  {
-    name: "Healthcare",
-    description: "HIPAA-compliant surgical monitoring, fall detection, and medication tracking with AI video analysis.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"></path><path d="m18 15-2-2"></path><path d="m15 18-2-2"></path></svg>
-    )
-  }
 ];
 
 export function IndustriesSection() {
@@ -54,8 +75,11 @@ export function IndustriesSection() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl font-bold mb-4">Industries We Serve</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            {/* <p className="text-muted-foreground max-w-2xl mx-auto">
               NeuroFlo delivers custom-built, agentic AI solutions for mission-critical operations across regulated industries.
+            </p> */}
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+              NeuroFlo is purpose-built for healthcare, with extensions for government healthcare programs when required.We deliver agentic AI solutions for mission-critical operations across regulated industries.
             </p>
           </motion.div>
         </div>

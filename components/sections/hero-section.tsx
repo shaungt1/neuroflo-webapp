@@ -40,11 +40,11 @@ export function HeroSection() {
               </span>
               <br />
               <span className="text-foreground">
-                Agentic AI for Mission-Critical Operations
+                Operate With Intelligence!
               </span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-              Custom AI systems for government, defense, healthcare, and law enforcement. Built for compliance, real-time intelligence, and operational excellence.
+             Under the hood, NeuroFlo runs a coordinated stack of specialized agents. A parsing agent structures the note, coding agents propose CPT, ICD-10, and HCPCS, validators apply payer and NCCI rules, and an evidence graph links every decision to the exact sentence, guideline, and user action for full traceability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700">
@@ -80,28 +80,28 @@ export function HeroSection() {
                   <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><line x1="12" y1="22" x2="12" y2="12"></line></svg>
                   </div>
-                  <span className="text-sm font-medium">Video Analysis</span>
+                  <span className="text-sm font-medium">Op-Notes & AI Assistant</span>
                 </div>
                 
                 <div className="flex flex-col items-center p-4 rounded-lg bg-background/50 border border-border/40">
                   <div className="w-12 h-12 rounded-full bg-cyan-600/20 flex items-center justify-center mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-500"><path d="M2 15V9c0-1 1-2 2-2h16c1 0 2 1 2 2v6c0 1-1 2-2 2h-4l-5 4v-4H4c-1 0-2-1-2-2Z"></path></svg>
                   </div>
-                  <span className="text-sm font-medium">Voice Processing</span>
+                  <span className="text-sm font-medium">Coding & Validation</span>
                 </div>
                 
                 <div className="flex flex-col items-center p-4 rounded-lg bg-background/50 border border-border/40">
                   <div className="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
                   </div>
-                  <span className="text-sm font-medium">Compliance-First</span>
+                  <span className="text-sm font-medium">EHR integration & Compliance</span>
                 </div>
                 
                 <div className="flex flex-col items-center p-4 rounded-lg bg-background/50 border border-border/40">
                   <div className="w-12 h-12 rounded-full bg-cyan-600/20 flex items-center justify-center mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-cyan-500"><path d="M21.9 8c-2.2-4.8-6.3-7-9.9-7-3.6 0-7.7 2.2-9.9 7-2 4.8-2 9.2 0 14 2.2 4.8 6.3 7 9.9 7 3.6 0 7.7-2.2 9.9-7 2-4.8 2-9.2 0-14Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                   </div>
-                  <span className="text-sm font-medium">Real-Time Intel</span>
+                  <span className="text-sm font-medium">Insights & Automation</span>
                 </div>
               </div>
               

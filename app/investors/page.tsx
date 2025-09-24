@@ -43,9 +43,9 @@ export default function InvestorsPage() {
           >
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold">We're Raising $10M</h2>
+                <h2 className="text-2xl font-bold">We're Raising $3M</h2>
                 <p className="text-muted-foreground">
-                  NeuroFlo is seeking $10M in funding to scale our custom-built, agentic AI platform for mission-critical operations in regulated industries.
+                  NeuroFlo is seeking $3M in funding to revolutionize healthcare documentation and coding with our agentic AI platform. We're willing to accept $1M for seed funding to enable intensive roadmap development and rapid deployment.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700">
@@ -96,10 +96,10 @@ export default function InvestorsPage() {
               <h2 className="text-2xl font-bold mb-6">What We Do</h2>
               <GlassmorphismCard intensity="low">
                 <p className="text-lg mb-4">
-                  NeuroFlo is the premier Agentic AI Platform for mission-critical operations in government, military, law enforcement, and healthcare.
+                  NeuroFlo transforms healthcare documentation and medical coding through agentic AI that connects voice, video, and text to extract clinical insights and automate billing processes.
                 </p>
                 <p className="text-muted-foreground">
-                  Unlike conventional AI systems, NeuroFlo is not a tool for customers to configure themselves—it's a bespoke, end-to-end solution crafted by our expert team of AI engineers, PhD researchers, UI/UX designers, and compliance specialists. We deliver custom-built, agentic AI experiences tailored to the unique challenges of regulated industries, ensuring seamless integration, unparalleled accuracy, and absolute trustworthiness.
+                  Our platform unifies documentation, coding, insights, and workflow automation in one HIPAA and SOC 2 compliant solution. Providers document once while our specialized agents infer CPT, ICD-10, and HCPCS codes with 98%+ accuracy, provide sentence-level evidence, validate payer rules, and integrate with major EHRs like Oracle Cerner. We deliver custom-built, agentic AI experiences with full audit trails and role-based access.
                 </p>
               </GlassmorphismCard>
             </section>
@@ -155,25 +155,25 @@ export default function InvestorsPage() {
                     <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
                     </div>
-                    <p>Pilot discussions with 3 federal agencies</p>
+                    <p><strong>Active Pilot with Vandalia Health</strong> - Deployed AI-powered surgical documentation and coding automation system</p>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
                     </div>
-                    <p>Strong interest from healthcare providers for HIPAA-compliant surgical monitoring</p>
+                    <p>Demonstrated 98%+ accuracy in CPT, ICD-10, and HCPCS code generation with full evidence traceability</p>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
                     </div>
-                    <p>Advanced prototype development for law enforcement video analysis</p>
+                    <p>Successful Oracle Cerner EHR integration with HIPAA and SOC 2 compliance validation</p>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
                     </div>
-                    <p>Growing waitlist for early testing program</p>
+                    <p>Building pipeline of interested healthcare providers following successful pilot results</p>
                   </li>
                 </ul>
               </GlassmorphismCard>
@@ -187,19 +187,19 @@ export default function InvestorsPage() {
                     <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
                     </div>
-                    <p>The future of AI in regulated industries is not self-service SaaS, but expert-led custom implementations that ensure compliance and performance.</p>
+                    <p>Healthcare documentation and coding requires specialized agentic AI that can understand medical context, not generic language models that lack domain expertise.</p>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
                     </div>
-                    <p>Agentic AI architectures outperform traditional approaches for mission-critical operations by enabling specialized agents to collaborate on complex tasks.</p>
+                    <p>Multi-agent architectures with specialized parsing, coding, validation, and evidence agents deliver superior accuracy compared to single-model approaches.</p>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
                     </div>
-                    <p>Building compliance into AI systems from day one is essential for success in regulated industries, where traditional AI solutions fail to meet stringent requirements.</p>
+                    <p>HIPAA compliance and audit traceability must be built into AI systems from day one, not retrofitted, to meet healthcare industry requirements.</p>
                   </li>
                 </ul>
               </GlassmorphismCard>
@@ -209,24 +209,24 @@ export default function InvestorsPage() {
               <h2 className="text-2xl font-bold mb-6">Market Size</h2>
               <GlassmorphismCard intensity="low">
                 <p className="text-muted-foreground mb-6">
-                  Total addressable market exceeding $10 billion by 2025 across:
+                  $45+ billion healthcare AI market with surgical documentation and medical coding representing a multi-billion dollar opportunity:
                 </p>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="border border-border/40 rounded-lg p-6 bg-background/40">
-                    <h3 className="font-medium text-lg mb-2">Government & Military</h3>
-                    <p className="text-muted-foreground">$4.2B market for AI-powered video analysis, emergency response, and secure intelligence systems.</p>
+                    <h3 className="font-medium text-lg mb-2">Medical Coding Market</h3>
+                    <p className="text-muted-foreground">$15.8B global medical coding market growing at 9.8% CAGR, driven by complexity of coding requirements and shortage of certified coders.</p>
                   </div>
                   <div className="border border-border/40 rounded-lg p-6 bg-background/40">
-                    <h3 className="font-medium text-lg mb-2">Law Enforcement</h3>
-                    <p className="text-muted-foreground">$2.8B market for AI-enhanced surveillance, evidence management, and public safety systems.</p>
+                    <h3 className="font-medium text-lg mb-2">Healthcare Documentation</h3>
+                    <p className="text-muted-foreground">$2.3B clinical documentation improvement market with increasing focus on accuracy and compliance automation.</p>
                   </div>
                   <div className="border border-border/40 rounded-lg p-6 bg-background/40">
-                    <h3 className="font-medium text-lg mb-2">Healthcare</h3>
-                    <p className="text-muted-foreground">$3.5B market for HIPAA-compliant AI monitoring, reporting, and patient care enhancement.</p>
+                    <h3 className="font-medium text-lg mb-2">Healthcare AI</h3>
+                    <p className="text-muted-foreground">$45B healthcare AI market by 2026, with administrative and operational AI representing the fastest growing segment.</p>
                   </div>
                   <div className="border border-border/40 rounded-lg p-6 bg-background/40">
-                    <h3 className="font-medium text-lg mb-2">Cross-Sector</h3>
-                    <p className="text-muted-foreground">$1.5B market for compliance tooling, reporting systems, and secure multimodal AI platforms.</p>
+                    <h3 className="font-medium text-lg mb-2">EHR Integration</h3>
+                    <p className="text-muted-foreground">$38B EHR market with growing demand for AI-powered documentation and coding solutions to reduce physician burnout.</p>
                   </div>
                 </div>
               </GlassmorphismCard>
@@ -236,9 +236,12 @@ export default function InvestorsPage() {
               <h2 className="text-2xl font-bold mb-6">Investment Ask</h2>
               <GlassmorphismCard intensity="medium" glowAccent={true}>
                 <div className="text-center p-4">
-                  <h3 className="text-3xl font-bold mb-4">$10M</h3>
-                  <p className="text-xl text-muted-foreground mb-8">
-                    To scale NeuroFlo's mission-critical AI platform
+                  <h3 className="text-3xl font-bold mb-4">$3M</h3>
+                  <p className="text-xl text-muted-foreground mb-4">
+                    To revolutionize healthcare documentation and coding
+                  </p>
+                  <p className="text-lg text-muted-foreground mb-8">
+                    We're willing to accept $1M for seed funding to enable intensive roadmap development and rapid deployment
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button asChild className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700">

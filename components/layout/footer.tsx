@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
             
             <p className="max-w-xs mt-4 text-sm text-muted-foreground">
-              The Premier Agentic AI Platform for Mission-Critical Operations in Government, Military, Law Enforcement, and Healthcare.
+            Healthcare-first agentic AI for operations: from op-notes to intelligence to clean claims, live insights, and automated workflows. Government healthcare ready.
             </p>
             
             <div className="flex mt-6 space-x-4">

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <body>
+    <h3>Local test splitter (client-side)</h3>
+    <input type="file" id="file" accept="application/pdf" />
+    <p>Pick a PDF and it will download one PDF per page.</p>
+
+    <script type="module">
+      import { PDFDocument } from "https://cdn.skypack.dev/pdf-lib";
+
+      function zero(n, w=3){ return String(n).padStart(w,'0'); }
+
+      document.getElementById('file').addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const arrayBuf = await file.arrayBuffer();
+        const src = await PDFDocument.load(arrayBuf);
+        const total = src.getPageCount();
+
+        for (let i = 0; i < total; i++) {
+          const dst = await PDFDocument.create();
+          const [page] = await dst.copyPages(src, [i]);
+          dst.addPage(page);
+          const bytes = await dst.save();
+          const blob = new Blob([bytes], { type: 'application/pdf' });
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = `${file.name.replace(/\.pdf$/i,'')}-page-${zero(i+1)}.pdf`;
+          document.body.appendChild(a);
+          a.click();
+          URL.revokeObjectURL(a.href);
+          a.remove();
+        }
+        alert('Done.');
+      });
+    </script>
+  </body>
+</html>

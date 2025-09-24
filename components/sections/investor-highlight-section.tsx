@@ -24,9 +24,9 @@ export function InvestorHighlightSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold mb-6">Why NeuroFlo is Different</h2>
+              <h2 className="text-3xl font-bold mb-6">Why NeuroFlo</h2>
               <p className="text-xl text-muted-foreground mb-8">
-                NeuroFlo is not configurable SaaS. We handcraft agentic AI systems with a team of PhDs, engineers, and compliance experts.
+                NeuroFlo is a healthcare AI platform that turns operative notes into codes, claims, and research-grade insights on a HIPAA and SOC 2 foundation.
               </p>
               
               <div className="space-y-4 mb-8">
@@ -34,28 +34,28 @@ export function InvestorHighlightSection() {
                   <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="m5 12 5 5L20 7"></path></svg>
                   </div>
-                  <p className="text-muted-foreground">Not a platform. A partner. We build and deploy custom AI solutions.</p>
+                  <p className="text-muted-foreground">Op-Notes to Claims: CPT, ICD-10, and HCPCS with evidence, payer and NCCI checks, and one-screen validation.</p>
                 </div>
                 
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="m5 12 5 5L20 7"></path></svg>
                   </div>
-                  <p className="text-muted-foreground">Custom-built, not configured. Each solution is handcrafted for specific needs.</p>
+                  <p className="text-muted-foreground">Proven accuracy: 95%+ in pilots with sentence-level citations and 90% claim acceptance on test sets.</p>
                 </div>
                 
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="m5 12 5 5L20 7"></path></svg>
                   </div>
-                  <p className="text-muted-foreground">Regulation-ready for HIPAA, CJIS, and FedRAMP compliance from day one.</p>
+                  <p className="text-muted-foreground">Integrated: Oracle Cerner pathways, exports to revenue systems, and no-code automations for operations and finance.</p>
                 </div>
                 
                 <div className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-blue-600/20 flex items-center justify-center flex-shrink-0 mt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="m5 12 5 5L20 7"></path></svg>
                   </div>
-                  <p className="text-muted-foreground">End-to-end solutions with ongoing support and adaptation as needs evolve.</p>
+                  <p className="text-muted-foreground">Insights built in: outcomes, complications, LOS, readmissions, and research KPIs from the same notes.</p>
                 </div>
               </div>
               
@@ -75,30 +75,30 @@ export function InvestorHighlightSection() {
               glowAccent={true}
               className="p-8"
             >
-              <h3 className="text-2xl font-bold mb-6">We're Raising $10M</h3>
+              <h3 className="text-2xl font-bold mb-6">We're Raising $3M</h3>
               <p className="text-muted-foreground mb-8">
-                Join us in scaling NeuroFlo's mission-critical AI platform to revolutionize regulated industries.
+                Funds will scale Op-Notes → Claims, validation, and insights across hospitals and ASCs, expand Oracle Cerner integrations, and accelerate go-to-market.
               </p>
               
               <div className="space-y-6 mb-8">
                 <div>
                   <h4 className="text-lg font-medium mb-2">Market Size</h4>
                   <p className="text-muted-foreground">
-                    Total addressable market exceeding $10 billion by 2025 across government, military, law enforcement, and healthcare sectors.
+                    TAM: $10B+ across healthcare AI for coding, RCM, and analytics as outlined in our deck.
                   </p>
                 </div>
                 
                 <div>
                   <h4 className="text-lg font-medium mb-2">Team</h4>
                   <p className="text-muted-foreground">
-                    Led by AI specialists with over 20 years of combined experience in secure, mission-critical systems.
+                    AI and healthcare engineers with 20+ years combined experience in secure, mission-critical systems and EHR integrations.
                   </p>
                 </div>
                 
                 <div>
                   <h4 className="text-lg font-medium mb-2">Traction</h4>
                   <p className="text-muted-foreground">
-                    Pilot discussions with 3 federal agencies and strong interest from healthcare providers.
+                    Pilot at a Maryland University Medical Center-affiliated surgical center; active work with Vandalia Health at $10K per month; 95%+ coding accuracy with sentence-level evidence.
                   </p>
                 </div>
               </div>
