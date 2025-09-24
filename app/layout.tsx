@@ -1,3 +1,4 @@
+// @ts-ignore
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -10,8 +11,8 @@ import Script from 'next/script';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'NeuroFlo | Agentic AI for Mission-Critical Operations',
-  description: 'Premier Agentic AI Platform for Government, Military, Law Enforcement, and Healthcare',
+  title: 'NeuroFlo | Operate With Intelligence',
+  description: 'Agentic AI for intelligent operations medical coding: from op-notes to intelligence to clean claims, live insights, and automated workflows. Government healthcare ready.',
 };
 
 export default function RootLayout({
